@@ -1,0 +1,107 @@
+PRIVACY POLICY — HytaleCompanion
+================================
+Last updated: 2026-09-30
+Project: https://github.com/jesuisjoszi/HytaleCompanion
+Author / contact: joszza (Discord: joszza)
+
+1. SCOPE
+--------
+This policy covers the HytaleCompanion mod (the "Mod") and how it works with the
+optional Hytale Admin panel for Root (the "Panel"). The Mod runs on a Hytale
+server that you (the server operator) control. The Panel runs as a Root App
+inside a Root community that you control.
+
+2. WHO IS RESPONSIBLE
+---------------------
+- Server operators decide whether to install the Mod and who may pair a Panel.
+- Community admins on Root decide who can access the Panel (roles / members).
+- The Mod author does not host your game data and does not sell it.
+
+3. WHAT DATA IS PROCESSED
+-------------------------
+When the Mod is installed and paired with a Panel, the companion HTTP/WebSocket
+API may expose (to authenticated Panel sessions only) information such as:
+
+- Server status (name, online state, player counts, uptime, memory stats)
+- Online player list (display names, UUIDs, world, coordinates, ping, game mode)
+- Player inventory / equipment snapshots for admin tools
+- Player head / icon images derived from in-game assets
+- Chat and console lines (when those features are enabled)
+- Whitelist entries and basic analytics counters (joins, playtime aggregates)
+- Pairing metadata (pair codes, bound Root community / install identifiers)
+- Live map tiles / markers / player positions when WebMap is enabled
+
+The Mod may store local configuration under the Hytale userdata / plugin data
+folder (API key, bind address, ports, binding IDs). That config stays on the
+server machine unless you copy it elsewhere.
+
+4. HOW DATA IS USED
+-------------------
+Data is used only to operate remote server administration in Root: viewing
+players, moderating, running commands, chat, whitelist, map, and related tools.
+It is not used for advertising profiles or resale.
+
+5. WHO CAN ACCESS DATA
+----------------------
+Access requires:
+
+1) A valid API key / successful pairing between the Mod and a Root App install, and
+2) Panel permissions configured in Root (e.g. Admins, Operators, Viewers, Map).
+
+Anyone with network reachability to the companion API port AND the key / pairing
+could potentially call the API. Operators must:
+
+- Keep the API key secret
+- Use bind-address 127.0.0.1 for local-only setups
+- Use firewall rules when binding 0.0.0.0 for dedicated / remote Root
+- Assign Root Panel roles carefully
+
+6. THIRD PARTIES
+----------------
+- Root (Root Communications, Inc.) hosts the Panel runtime when you publish /
+  install the Root App. Their platform terms and privacy policy also apply to
+  data processed inside Root communities.
+- The Mod does not require a separate cloud account with the Mod author.
+- Optional integrations (e.g. claim plugins for map overlays) may expose data
+  those plugins already store on your server.
+
+7. RETENTION
+------------
+- Live game state exists while the Hytale process runs.
+- Local plugin config and any on-disk caches remain until you delete the Mod
+  data folder or uninstall.
+- Panel-side audit / history (if enabled) is stored in the Root App data store
+  for that community install until cleared or the App is removed.
+- Operators should purge plugin data and revoke pairing when decommissioning a
+  server.
+
+8. CHILDREN
+-----------
+Hytale and Root may have their own age requirements. Do not use this Mod to
+collect personal data from children in ways that violate applicable law or
+platform rules.
+
+9. SECURITY
+-----------
+No software is perfectly secure. Operators should update the Mod, rotate API
+keys after leaks, restrict ports, and review who has Panel access. Report
+security issues via GitHub Issues on the project repository (avoid posting
+secrets publicly).
+
+10. YOUR CHOICES
+----------------
+- Uninstall the Mod and delete its data folder to stop collection at the source.
+- Disconnect / unpair the Panel in Root.
+- Narrow Panel access groups so only trusted roles see live data.
+
+11. CHANGES
+-----------
+Updates to this policy may be published in the same GitHub repository. The
+"Last updated" date above will change when material terms change.
+
+12. CONTACT
+-----------
+Questions about this Mod's privacy practices: joszza on Discord, or open an
+issue at https://github.com/jesuisjoszi/HytaleCompanion
+
+This document is provided for transparency and is not legal advice.
